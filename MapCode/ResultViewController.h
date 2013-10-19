@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ResultViewController.h
 //  MapCode
 //
 //  Created by Andrea Carlevato on 10/19/13.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@interface ResultViewController : UIViewController <CLLocationManagerDelegate>
 
-- (IBAction)onGetMapCode:(id)sender;
+@property (nonatomic, strong) CLLocation *inputLocation;
 
 @end
