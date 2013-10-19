@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *waitingSpinner;
 @property (weak, nonatomic) IBOutlet UIButton *refreshButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *vcNavItem;
-
+@property (weak, nonatomic) IBOutlet UILabel *parentCodeLabel;
 
 @end
 
@@ -69,8 +69,21 @@ CLLocationManager *locationManager;
     [self.resultLabel setText:result.worldMapCode];
     [self.localResultLabel setText:result.localMapCode];
     [self.countryCode setText:result.localCountryCode];
-    [self.parentMapCode setText:result.parentMapCode];
-    [self.parentCountryCode setText:result.parentCountryCode];
+    
+    if (result.parentMapCode.length > 0)
+    {
+        self.parentCodeLabel.hidden = NO;
+        self.parentMapCode.hidden = NO;
+        self.parentCountryCode.hidden = NO;
+        [self.parentMapCode setText:result.parentMapCode];
+        [self.parentCountryCode setText:result.parentCountryCode];
+    }
+    else
+    {
+        self.parentCodeLabel.hidden = YES;
+        self.parentMapCode.hidden = YES;
+        self.parentCountryCode.hidden = YES;
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate
