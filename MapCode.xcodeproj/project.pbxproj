@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA557D5A181346E2006F1422 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = AA557D59181346E2006F1422 /* banner.png */; };
 		AAABB3D31812CE2B00A182B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D21812CE2B00A182B3 /* Foundation.framework */; };
 		AAABB3D51812CE2B00A182B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D41812CE2B00A182B3 /* CoreGraphics.framework */; };
 		AAABB3D71812CE2B00A182B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D61812CE2B00A182B3 /* UIKit.framework */; };
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA557D59181346E2006F1422 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = ../../../../../Desktop/banner.png; sourceTree = "<group>"; };
 		AAABB3CF1812CE2B00A182B3 /* MapCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAABB3D21812CE2B00A182B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAABB3D41812CE2B00A182B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,7 +131,6 @@
 		AAABB3D81812CE2B00A182B3 /* MapCode */ = {
 			isa = PBXGroup;
 			children = (
-				AA557D59181346E2006F1422 /* banner.png */,
 				AAABB4131812D0D600A182B3 /* basics.h */,
 				AAABB4141812D0D600A182B3 /* mapcoder.cpp */,
 				AAABB4151812D0D600A182B3 /* mapcoder.h */,
@@ -267,7 +264,6 @@
 				AAABB3EE1812CE2B00A182B3 /* Images.xcassets in Resources */,
 				AAABB3E61812CE2B00A182B3 /* Main_iPhone.storyboard in Resources */,
 				AAABB3DD1812CE2B00A182B3 /* InfoPlist.strings in Resources */,
-				AA557D5A181346E2006F1422 /* banner.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
