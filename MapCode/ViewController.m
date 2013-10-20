@@ -8,12 +8,14 @@
 
 #import "ViewController.h"
 #import "ResultViewController.h"
+#import "MapCodeEngine.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) CLLocation *receivedLocation;
 @property (weak, nonatomic) IBOutlet UIButton *showButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *waitingSpinner;
+@property (strong, nonatomic) MapCodeEngine *mapCodeEngine;
 
 @end
 
@@ -25,7 +27,13 @@ CLLocationManager *locationManager;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.mapCodeEngine = [MapCodeEngine new];
 	locationManager = [[CLLocationManager alloc] init];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +88,7 @@ CLLocationManager *locationManager;
     {
         ResultViewController *vc = [segue destinationViewController];
         vc.inputLocation = self.receivedLocation;
+        vc.mapCodeEngine = self.mapCodeEngine;
     }
 }
 

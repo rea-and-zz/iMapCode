@@ -7,20 +7,18 @@
 //
 
 #import "ResultViewController.h"
-#import "MapCode.h"
-#import "EncodeResult.h"
+#import "LocMapCodeSet.h"
+#import "AlternativesViewController.h"
 
 @interface ResultViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
-@property (weak, nonatomic) IBOutlet UILabel *localResultLabel;
-@property (weak, nonatomic) IBOutlet UILabel *countryCode;
-@property (weak, nonatomic) IBOutlet UILabel *parentMapCode;
-@property (weak, nonatomic) IBOutlet UILabel *parentCountryCode;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *waitingSpinner;
 @property (weak, nonatomic) IBOutlet UIButton *refreshButton;
-@property (weak, nonatomic) IBOutlet UINavigationItem *vcNavItem;
-@property (weak, nonatomic) IBOutlet UILabel *parentCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mainCountryCode;
+@property (weak, nonatomic) IBOutlet UILabel *mainMapCode;
+@property (weak, nonatomic) IBOutlet UILabel *fullCountryName;
+
+@property (strong, nonatomic) LocMapCodeSet *encodeResults;
 
 @end
 
@@ -40,50 +38,26 @@ CLLocationManager *locationManager;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStyleBordered target:self action:@selector(goBack)];
-    self.vcNavItem.leftBarButtonItem = backButton;
-    
     locationManager = [[CLLocationManager alloc] init];
     [self updateResults];
 }
 
--(void)goBack
+- (void)viewWillAppear:(BOOL)animated
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)updateResults
 {
-    MapCode *mapCode = [MapCode new];
-    NSString *in = NULL;
-    in = [NSString stringWithFormat: @"%f", self.inputLocation.coordinate.latitude];
-    in = [in stringByReplacingOccurrencesOfString:@"." withString:@""];
-    long y = (long)[in longLongValue];
-    in = [NSString stringWithFormat: @"%f", self.inputLocation.coordinate.longitude];
-    in = [in stringByReplacingOccurrencesOfString:@"." withString:@""];
-    long x = (long)[in longLongValue];
+    NSString *lat = [NSString stringWithFormat: @"%f", self.inputLocation.coordinate.latitude];
+    NSString *lon = [NSString stringWithFormat: @"%f", self.inputLocation.coordinate.longitude];
     
-    EncodeResult *result = [mapCode decodePositionWithX:x andY:y];
+    self.encodeResults = [self.mapCodeEngine decodePositionWithLat:lat andLon:lon];
     
-    [self.resultLabel setText:result.worldMapCode];
-    [self.localResultLabel setText:result.localMapCode];
-    [self.countryCode setText:result.localCountryCode];
-    
-    if (result.parentMapCode.length > 0)
-    {
-        self.parentCodeLabel.hidden = NO;
-        self.parentMapCode.hidden = NO;
-        self.parentCountryCode.hidden = NO;
-        [self.parentMapCode setText:result.parentMapCode];
-        [self.parentCountryCode setText:result.parentCountryCode];
-    }
-    else
-    {
-        self.parentCodeLabel.hidden = YES;
-        self.parentMapCode.hidden = YES;
-        self.parentCountryCode.hidden = YES;
-    }
+    MapCodeItem *mainResult = self.encodeResults.localMapCodes[0];
+    [self.mainCountryCode setText: mainResult.countryCode];
+    [self.mainMapCode setText: mainResult.mapCode];
+    [self.fullCountryName setText: [NSString stringWithFormat:@"(%@)", self.encodeResults.coutryName]];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -129,6 +103,22 @@ CLLocationManager *locationManager;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"alternativesSegue"])
+    {
+        AlternativesViewController *vc = [segue destinationViewController];
+        vc.encodeResults = self.encodeResults;
+        vc.showWorldWide = NO;
+    }
+    else if ([[segue identifier] isEqualToString:@"worldwideSegue"])
+    {
+        AlternativesViewController *vc = [segue destinationViewController];
+        vc.encodeResults = self.encodeResults;
+        vc.showWorldWide = YES;
+    }
 }
 
 @end

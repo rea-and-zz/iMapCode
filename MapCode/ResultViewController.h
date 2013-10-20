@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "MapCodeEngine.h"
 
 @interface ResultViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocation *inputLocation;
+@property (strong, nonatomic) MapCodeEngine *mapCodeEngine;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA85800D1813DB5D00471BD5 /* mapcode.js in Resources */ = {isa = PBXBuildFile; fileRef = AA85800A1813DB5D00471BD5 /* mapcode.js */; };
 		AAABB3D31812CE2B00A182B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D21812CE2B00A182B3 /* Foundation.framework */; };
 		AAABB3D51812CE2B00A182B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D41812CE2B00A182B3 /* CoreGraphics.framework */; };
 		AAABB3D71812CE2B00A182B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D61812CE2B00A182B3 /* UIKit.framework */; };
@@ -22,11 +23,12 @@
 		AAABB3F71812CE2B00A182B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB3D61812CE2B00A182B3 /* UIKit.framework */; };
 		AAABB3FF1812CE2B00A182B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAABB3FD1812CE2B00A182B3 /* InfoPlist.strings */; };
 		AAABB4011812CE2B00A182B3 /* MapCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB4001812CE2B00A182B3 /* MapCodeTests.m */; };
-		AAABB40E1812D02A00A182B3 /* MapCode.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAABB40D1812D02A00A182B3 /* MapCode.mm */; };
-		AAABB4161812D0D600A182B3 /* mapcoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAABB4141812D0D600A182B3 /* mapcoder.cpp */; };
+		AAABB40E1812D02A00A182B3 /* MapCodeEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = AAABB40D1812D02A00A182B3 /* MapCodeEngine.mm */; };
 		AAABB4191812D25800A182B3 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB4181812D25800A182B3 /* ResultViewController.m */; };
 		AAABB41B1812DF7600A182B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAABB41A1812DF7600A182B3 /* CoreLocation.framework */; };
-		AAABB41E1812EBCE00A182B3 /* EncodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB41D1812EBCE00A182B3 /* EncodeResult.m */; };
+		AAABB41E1812EBCE00A182B3 /* LocMapCodeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB41D1812EBCE00A182B3 /* LocMapCodeSet.m */; };
+		AAFE5AFD18141CBB00305BA5 /* MapCodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE5AFC18141CBB00305BA5 /* MapCodeItem.m */; };
+		AAFE5B0018142AEC00305BA5 /* AlternativesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFE5AFF18142AEC00305BA5 /* AlternativesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA85800A1813DB5D00471BD5 /* mapcode.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mapcode.js; sourceTree = "<group>"; };
+		AA85800F1813DC5F00471BD5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		AAABB3CF1812CE2B00A182B3 /* MapCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAABB3D21812CE2B00A182B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAABB3D41812CE2B00A182B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,16 +64,17 @@
 		AAABB3FC1812CE2B00A182B3 /* MapCodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapCodeTests-Info.plist"; sourceTree = "<group>"; };
 		AAABB3FE1812CE2B00A182B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAABB4001812CE2B00A182B3 /* MapCodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapCodeTests.m; sourceTree = "<group>"; };
-		AAABB40C1812D02A00A182B3 /* MapCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCode.h; sourceTree = "<group>"; };
-		AAABB40D1812D02A00A182B3 /* MapCode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapCode.mm; sourceTree = "<group>"; };
-		AAABB4131812D0D600A182B3 /* basics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basics.h; sourceTree = "<group>"; };
-		AAABB4141812D0D600A182B3 /* mapcoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mapcoder.cpp; sourceTree = "<group>"; };
-		AAABB4151812D0D600A182B3 /* mapcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapcoder.h; sourceTree = "<group>"; };
+		AAABB40C1812D02A00A182B3 /* MapCodeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCodeEngine.h; sourceTree = "<group>"; };
+		AAABB40D1812D02A00A182B3 /* MapCodeEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapCodeEngine.mm; sourceTree = "<group>"; };
 		AAABB4171812D25800A182B3 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		AAABB4181812D25800A182B3 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		AAABB41A1812DF7600A182B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		AAABB41C1812EBCE00A182B3 /* EncodeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeResult.h; sourceTree = "<group>"; };
-		AAABB41D1812EBCE00A182B3 /* EncodeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeResult.m; sourceTree = "<group>"; };
+		AAABB41C1812EBCE00A182B3 /* LocMapCodeSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocMapCodeSet.h; sourceTree = "<group>"; };
+		AAABB41D1812EBCE00A182B3 /* LocMapCodeSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocMapCodeSet.m; sourceTree = "<group>"; };
+		AAFE5AFB18141CBB00305BA5 /* MapCodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCodeItem.h; sourceTree = "<group>"; };
+		AAFE5AFC18141CBB00305BA5 /* MapCodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCodeItem.m; sourceTree = "<group>"; };
+		AAFE5AFE18142AEC00305BA5 /* AlternativesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlternativesViewController.h; sourceTree = "<group>"; };
+		AAFE5AFF18142AEC00305BA5 /* AlternativesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlternativesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,7 @@
 		AAABB3C61812CE2B00A182B3 = {
 			isa = PBXGroup;
 			children = (
+				AA85800A1813DB5D00471BD5 /* mapcode.js */,
 				AAABB3D81812CE2B00A182B3 /* MapCode */,
 				AAABB3FA1812CE2B00A182B3 /* MapCodeTests */,
 				AAABB3D11812CE2B00A182B3 /* Frameworks */,
@@ -119,6 +125,7 @@
 		AAABB3D11812CE2B00A182B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA85800F1813DC5F00471BD5 /* JavaScriptCore.framework */,
 				AAABB41A1812DF7600A182B3 /* CoreLocation.framework */,
 				AAABB3D21812CE2B00A182B3 /* Foundation.framework */,
 				AAABB3D41812CE2B00A182B3 /* CoreGraphics.framework */,
@@ -131,9 +138,6 @@
 		AAABB3D81812CE2B00A182B3 /* MapCode */ = {
 			isa = PBXGroup;
 			children = (
-				AAABB4131812D0D600A182B3 /* basics.h */,
-				AAABB4141812D0D600A182B3 /* mapcoder.cpp */,
-				AAABB4151812D0D600A182B3 /* mapcoder.h */,
 				AAABB3E11812CE2B00A182B3 /* AppDelegate.h */,
 				AAABB3E21812CE2B00A182B3 /* AppDelegate.m */,
 				AAABB3E41812CE2B00A182B3 /* Main_iPhone.storyboard */,
@@ -142,10 +146,14 @@
 				AAABB3EB1812CE2B00A182B3 /* ViewController.m */,
 				AAABB4171812D25800A182B3 /* ResultViewController.h */,
 				AAABB4181812D25800A182B3 /* ResultViewController.m */,
-				AAABB40C1812D02A00A182B3 /* MapCode.h */,
-				AAABB40D1812D02A00A182B3 /* MapCode.mm */,
-				AAABB41C1812EBCE00A182B3 /* EncodeResult.h */,
-				AAABB41D1812EBCE00A182B3 /* EncodeResult.m */,
+				AAFE5AFE18142AEC00305BA5 /* AlternativesViewController.h */,
+				AAFE5AFF18142AEC00305BA5 /* AlternativesViewController.m */,
+				AAABB40C1812D02A00A182B3 /* MapCodeEngine.h */,
+				AAABB40D1812D02A00A182B3 /* MapCodeEngine.mm */,
+				AAABB41C1812EBCE00A182B3 /* LocMapCodeSet.h */,
+				AAABB41D1812EBCE00A182B3 /* LocMapCodeSet.m */,
+				AAFE5AFB18141CBB00305BA5 /* MapCodeItem.h */,
+				AAFE5AFC18141CBB00305BA5 /* MapCodeItem.m */,
 				AAABB3ED1812CE2B00A182B3 /* Images.xcassets */,
 				AAABB3D91812CE2B00A182B3 /* Supporting Files */,
 			);
@@ -260,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA85800D1813DB5D00471BD5 /* mapcode.js in Resources */,
 				AAABB3E91812CE2B00A182B3 /* Main_iPad.storyboard in Resources */,
 				AAABB3EE1812CE2B00A182B3 /* Images.xcassets in Resources */,
 				AAABB3E61812CE2B00A182B3 /* Main_iPhone.storyboard in Resources */,
@@ -282,12 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFE5B0018142AEC00305BA5 /* AlternativesViewController.m in Sources */,
+				AAFE5AFD18141CBB00305BA5 /* MapCodeItem.m in Sources */,
 				AAABB3EC1812CE2B00A182B3 /* ViewController.m in Sources */,
-				AAABB4161812D0D600A182B3 /* mapcoder.cpp in Sources */,
-				AAABB41E1812EBCE00A182B3 /* EncodeResult.m in Sources */,
+				AAABB41E1812EBCE00A182B3 /* LocMapCodeSet.m in Sources */,
 				AAABB3E31812CE2B00A182B3 /* AppDelegate.m in Sources */,
 				AAABB3DF1812CE2B00A182B3 /* main.m in Sources */,
-				AAABB40E1812D02A00A182B3 /* MapCode.mm in Sources */,
+				AAABB40E1812D02A00A182B3 /* MapCodeEngine.mm in Sources */,
 				AAABB4191812D25800A182B3 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
